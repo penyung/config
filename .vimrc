@@ -99,3 +99,4 @@ call vundle#end()
 
 "key mapping for ctags
 map <F12> :!ctags -R --c++-kinds=+p --fields=iaS --extra=+q . <CR><CR>
+nmap <C-g> :tag<CR>
