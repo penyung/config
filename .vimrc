@@ -85,6 +85,7 @@ nmap <F8> :TagbarToggle<CR>
 Plugin 'Valloric/YouCompleteMe'
 " too lag for llvm, disable it
 "let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_confirm_extra_conf = 0
 
 " for quickly search file
 Plugin 'eparreno/vim-l9'
