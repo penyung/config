@@ -2,3 +2,7 @@
 	name = Pen-Yung Yu
 [core]
 	editor = vim
+[color]
+	ui = true
+[log]
+	decorate = short
