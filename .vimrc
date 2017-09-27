@@ -37,7 +37,7 @@ set foldmarker={,}
 set foldmethod=syntax
 
 "for inserting a single char
-:nmap <Space> i_<Esc>r
+:nmap <Space> i <Esc>r
 
 " for highlight the trailing space
 hi ExtraWhitespace ctermbg=red guibg=red
@@ -86,6 +86,7 @@ Plugin 'Valloric/YouCompleteMe'
 " too lag for llvm, disable it
 "let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_confirm_extra_conf = 0
+map <F9> :YcmCompleter FixIt<CR>
 
 " for quickly search file
 Plugin 'eparreno/vim-l9'
