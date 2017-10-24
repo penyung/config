@@ -4,6 +4,7 @@
 case $1 in
 install)
   git clone https://github.com/VundleVim/Vundle.vim $HOME/.vim/bundle/Vundle.vim
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   cp .bash_aliases ~/.bash_aliases
   cp .gitconfig ~/.gitconfig
   cp .tmux.conf ~/.tmux.conf
