@@ -97,6 +97,11 @@ Plugin 'yegappan/grep'
 
 " for preview markdown file
 Plugin 'JamshedVesuna/vim-markdown-preview'
+
+" for Highlight server words in different colors
+Plugin 'vim-scripts/ingo-library'
+Plugin 'inkarkat/vim-mark'
+
 call vundle#end()
 
 "key mapping for ctags
