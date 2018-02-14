@@ -55,4 +55,9 @@ hi TabLineSel   ctermfg=104         ctermbg=236         cterm=Bold
 
 hi ModeMsg      ctermfg=39          ctermbg=None        cterm=Bold
 
+" for vimdiff color
+hi DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+hi DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+hi DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+hi DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
 "vim: sw=4

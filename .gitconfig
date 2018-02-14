@@ -2,7 +2,11 @@
 	name = Pen-Yung Yu
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore
 [color]
 	ui = true
 [log]
 	decorate = short
+[alias]
+	commit = commit -s
+	lg = log --graph --pretty=format:'%Cred%h%Creset - %an %Cgreen(%cr)%Creset %C(yellow)%d%Creset %s' --abbrev-commit --date=relative
