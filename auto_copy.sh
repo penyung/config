@@ -9,8 +9,10 @@ install)
   cp .gitconfig ~/.gitconfig
   cp .tmux.conf ~/.tmux.conf
   cp .vimrc ~/.vimrc
-  mkdir -p ~/.vim/colors/
-  cp .vim/colors/256-jungle.vim ~/.vim/colors/256-jungle.vim
+  mkdir -p ~/.vim/
+  cp -r .vim/colors/ ~/.vim/colors/
+  cp -r .vim/syntax/ ~/.vim/syntax/
+  cp -r .vim/localvimrc/ ~/.vim/localvimrc/
   mkdir -p ~/local/
   cp -r script/ ~/local/
   ;;
@@ -20,6 +22,8 @@ back)
   cp ~/.tmux.conf .tmux.conf
   cp ~/.vimrc .vimrc
   cp ~/.vim/colors/256-jungle.vim .vim/colors/256-jungle.vim
+  cp ~/.vim/localvimrc/* .vim/localvimrc/
+  cp ~/.vim/syntax/* .vim/syntax/
   cp ~/local/script/* ./script/
   ;;
 *)

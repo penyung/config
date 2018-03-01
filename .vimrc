@@ -7,7 +7,7 @@ set showmode
 set encoding=utf-8
 set termencoding=utf-8
 colorscheme 256-jungle
-"set expandtab
+set expandtab
 set tabstop=2
 set shiftwidth=2 " for tab view
 set laststatus=2
@@ -33,18 +33,11 @@ augroup filetype
 augroup END
 
 " makefile need tab
-autocmd FileType make set noexpandtab shiftwidth=4 softtabstop=0
-autocmd FileType python set shiftwidth=4 tabstop=4 expandtab fdm=indent
-autocmd FileType tablegen set foldmarker={,} fdm=marker
+autocmd FileType make setlocal noexpandtab shiftwidth=4 softtabstop=0
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 expandtab fdm=indent
+autocmd FileType tablegen setlocal foldmarker={,} fdm=marker
 
 " ----------------- for special highlighting --------------
-" for examining lines that are more than 80 columns, it should be set by project
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-augroup format
-  autocmd BufRead,BufNewFile /home/RTDOMAIN/penyung/repo-sdk/llvm-6/* match OverLength /\%81v.\+/
-  autocmd BufRead,BufNewFile /ssd/penyung/repo-sdk/llvm-6/* match OverLength /\%81v.\+/
-augroup END
-
 " highlight region
 syntax region region1 matchgroup=region1 start="===r1===" end="===rend==="
 highlight region1 ctermfg=red guifg=red
@@ -60,12 +53,14 @@ hi MyComment ctermfg=240
 vnoremap // y/<C-R>"<CR>"
 
 "for inserting a single char
-:nmap <Space> i <Esc>r
+nmap <Space> i <Esc>r
 
 "key mapping for ctags
 map <F12> :!ctags -R --c++-kinds=+p --fields=iaS --extra=+q . <CR><CR>
 nmap <C-g> :tag<CR>
 
+" press \l to highlight current line
+nnoremap <silent> <Leader>l ml:execute 'match Search /\%'.line('.').'l/'<CR>
 " ----------------- Vundle plugin ------------
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -121,6 +116,9 @@ Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'vim-scripts/ingo-library'
 Plugin 'inkarkat/vim-mark'
 
+" for load local vimrc
+Plugin 'embear/vim-localvimrc'
+let g:localvimrc_ask = 0
 call vundle#end()
 
 if findfile("/home/RTDOMAIN/STools/RLX-RHEL6/vim-8.0.1097/share/vim/vim80/syntax/syncolor.vim")

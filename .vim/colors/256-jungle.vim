@@ -13,7 +13,7 @@ let c_gnu = 1
 hi Normal       ctermfg=253         ctermbg=234         cterm=None
 hi Cursor       ctermfg=253         ctermbg=57          cterm=None
 set cursorline
-hi CursorLine   cterm=bold          ctermbg=NONE        ctermfg=NONE
+hi CursorLine   ctermfg=None        ctermbg=None        cterm=Bold
 hi SpecialKey   ctermfg=70          ctermbg=None        cterm=None
 hi Directory    ctermfg=57          ctermbg=254         cterm=None
 hi ErrorMsg     ctermfg=160         ctermbg=245         cterm=None
@@ -61,3 +61,5 @@ hi DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 hi DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 hi DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
 "vim: sw=4
+" for syntax check
+hi OverLength ctermbg=red ctermfg=white guibg=#592929
