@@ -30,12 +30,14 @@ augroup filetype
   " other setting
   au BufRead,BufNewFile *.cl     set filetype=cpp
   au BufRead,BufNewFile *.ptx    set filetype=s
+  au BufRead,BufNewFile *.log    set filetype=log
 augroup END
 
 " makefile need tab
 autocmd FileType make setlocal noexpandtab shiftwidth=4 softtabstop=0
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 expandtab fdm=indent
 autocmd FileType tablegen setlocal foldmarker={,} fdm=marker
+autocmd FIleType log match
 
 " ----------------- for special highlighting --------------
 " highlight region
@@ -67,7 +69,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-" If F3 and F4 doesn't work for autotags, google putty F3 to search why to change putty settings
+" If F3 and F4 doesn't work for autotags, change terminal settings to XTERM in putty
 " set g:autotags_ctags_opts for YouCompleteMe
 Plugin 'basilgor/vim-autotags'
 let g:autotags_ctags_opts = "--c++-kinds=+p --fields=+iaSl --extra=+qf"
@@ -121,14 +123,10 @@ Plugin 'embear/vim-localvimrc'
 let g:localvimrc_ask = 0
 call vundle#end()
 
-if findfile("/home/RTDOMAIN/STools/RLX-RHEL6/vim-8.0.1097/share/vim/vim80/syntax/syncolor.vim")
-	source /home/RTDOMAIN/STools/RLX-RHEL6/vim-8.0.1097/share/vim/vim80/syntax/syncolor.vim
+if filereadable(expand("~/.vimrc.local"))
+	source ~/.vimrc.local
 endif
-
 syntax on
-
-" for llvm only. Replace it with a vim plugin in the future
-set path+=/home/RTDOMAIN/penyung/repo-rsdk/llvm-6/include/
 
 " file is larger than 10mb
 let g:LargeFile = 1024 * 1024 * 100
