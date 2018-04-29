@@ -88,21 +88,19 @@ let g:AutoPairsShortcutBackInsert = '<M-b>'
 Plugin 'majutsushi/tagbar'
 nmap <F8> :TagbarToggle<CR>
 
-"if $DEBIAN
-  " for auto completion
-  Plugin 'Valloric/YouCompleteMe'
-  " too lag for llvm, disable it
-  "let g:ycm_collect_identifiers_from_tags_files = 1
-  let g:ycm_confirm_extra_conf = 0
-  map <F9> :YcmCompleter FixIt<CR>
-	let g:ycm_filetype_blacklist = {
-		\ 'log' : 1,
-	  \}
-	let g:ycm_filetype_specific_completion_to_disable = {
-		\ 'sh' : 1,
-		\ 'vim' : 1,
-	  \}
-"endif
+" for auto completion
+Plugin 'Valloric/YouCompleteMe'
+" too lag for llvm, disable it
+"let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_confirm_extra_conf = 0
+map <F9> :YcmCompleter FixIt<CR>
+let g:ycm_filetype_blacklist = {
+   \ 'log' : 1,
+   \}
+let g:ycm_filetype_specific_completion_to_disable = {
+  \ 'sh' : 1,
+  \ 'vim' : 1,
+  \}
 
 " for quickly search file
 Plugin 'eparreno/vim-l9'
@@ -111,8 +109,11 @@ Plugin 'seudut/FuzzyFinder'
 " for grep integration with vim
 Plugin 'yegappan/grep'
 
-" for preview markdown file
-Plugin 'JamshedVesuna/vim-markdown-preview'
+" for markdown file
+"Plugin 'vim-pandoc/vim-pandoc-syntax'
+"augroup pandoc_syntax
+"  au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+"augroup END
 
 " for Highlight server words in different colors
 Plugin 'vim-scripts/ingo-library'
@@ -121,6 +122,68 @@ Plugin 'inkarkat/vim-mark'
 " for load local vimrc
 Plugin 'embear/vim-localvimrc'
 let g:localvimrc_ask = 0
+
+" for indentline
+Plugin 'Yggdroot/indentLine'
+let g:indentLine_color_term = 239
+let g:indentLine_char = ' '
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceChar = '·'
+let g:indentLine_fileType = ['python']
+
+" for syntax check (python only)
+Plugin 'vim-syntastic/syntastic'
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+
+"for source explorer
+Plugin 'wesleyche/SrcExpl'
+" The switch of the Source Explorer
+nmap <F10> :SrcExplToggle<CR>
+
+" Set "<F12>" key for updating the tags file artificially
+let g:SrcExpl_updateTagsKey = "<F12>"
+
+" Set "<F5>" key for displaying the previous definition in the jump list
+let g:SrcExpl_prevDefKey = "<F5>"
+
+" Set "<F6>" key for displaying the next definition in the jump list
+let g:SrcExpl_nextDefKey = "<F6>"
+
+" Set the height of Source Explorer window
+let g:SrcExpl_winHeight = 8
+
+" Set 100 ms for refreshing the Source Explorer
+let g:SrcExpl_refreshTime = 100
+"
+"" Set "Enter" key to jump into the exact definition context
+"let g:SrcExpl_jumpKey = "<ENTER>"
+""
+"" Set "Space" key for back from the definition context
+"let g:SrcExpl_gobackKey = "<SPACE>"
+
+" In order to avoid conflicts, the Source Explorer should know what plugins
+" except itself are using buffers. And you need add their buffer names into
+" below listaccording to the command ":buffers!"
+"let g:SrcExpl_pluginList = [
+"        \ "__Tag_List__",
+"        \ "_NERD_tree_"
+"    \ ]
+
+" Enable/Disable the local definition searching, and note that this is not
+" guaranteed to work, the Source Explorer doesn't check the syntax for now.
+" It only searches for a match with the keyword according to command 'gd'
+let g:SrcExpl_searchLocalDef = 1
+
+" Do not let the Source Explorer update the tags file when opening
+let g:SrcExpl_isUpdateTags = 0
+
+" Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to
+" create/update the tags file
+let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ."
 call vundle#end()
 
 if filereadable(expand("~/.vimrc.local"))
@@ -129,10 +192,10 @@ endif
 syntax on
 
 " file is larger than 10mb
-let g:LargeFile = 1024 * 1024 * 100
-augroup LargeFile
- autocmd BufReadPre * let f=getfsize(expand("<afile>")) | if f > g:LargeFile || f == -2 | call LargeFile() | endif
-augroup END
+"let g:LargeFile = 1024 * 1024 * 100
+"augroup LargeFile
+" autocmd BufReadPre * let f=getfsize(expand("<afile>")) | if f > g:LargeFile || f == -2 | call LargeFile() | endif
+"augroup END
 
 function LargeFile()
  " no syntax highlighting etc
