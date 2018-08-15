@@ -184,6 +184,8 @@ let g:SrcExpl_isUpdateTags = 0
 " Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to
 " create/update the tags file
 let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ."
+
+Plugin 'vim-scripts/AnsiEsc.vim'
 call vundle#end()
 
 if filereadable(expand("~/.vimrc.local"))
