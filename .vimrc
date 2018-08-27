@@ -101,6 +101,11 @@ let g:ycm_filetype_specific_completion_to_disable = {
   \ 'sh' : 1,
   \ 'vim' : 1,
   \}
+" auto close preview window
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+" ycm will have completion when input comments
+let g:ycm_complete_in_comments = 1
 
 " for quickly search file
 Plugin 'eparreno/vim-l9'
