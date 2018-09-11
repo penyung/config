@@ -63,6 +63,11 @@ nmap <C-g> :tag<CR>
 
 " press \l to highlight current line
 nnoremap <silent> <Leader>l ml:execute 'match Search /\%'.line('.').'l/'<CR>
+
+" for opening the definition in a new tab
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" for opening the definition in a vertical split. But alt-key doesn't work
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 " ----------------- Vundle plugin ------------
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
