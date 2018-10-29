@@ -11,4 +11,4 @@
 	decorate = short
 [alias]
 	commit = commit -s
-	lg = log --graph --pretty=format:'%Cred%h%Creset - %<(20,trunc)%an %Cgreen(%cr)%Creset %C(yellow)%d%Creset %<(140,trunc)%s' --abbrev-commit --date=relative
+	lg = log --graph --pretty=format:'%Cred%h%Creset - %<(20,trunc)%an %Cgreen(%cr)%Creset %C(yellow)%d%Creset %<(140,trunc)%s' --abbrev-commit --date=relative --all
