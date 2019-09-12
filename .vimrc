@@ -98,18 +98,25 @@ Plugin 'Valloric/YouCompleteMe'
 " too lag for llvm, disable it
 "let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_confirm_extra_conf = 0
-map <F9> :YcmCompleter FixIt<CR>
+map <F9> :YcmCompleter FixIt<Enter><C-w>j
 let g:ycm_filetype_blacklist = {
    \ 'log' : 1,
    \}
 let g:ycm_filetype_specific_completion_to_disable = {
-  \ 'sh' : 1,
-  \ 'vim' : 1,
   \}
 " auto close preview window
 let g:ycm_autoclose_preview_window_after_insertion = 1
 " ycm will have completion when input comments
 let g:ycm_complete_in_comments = 1
+let g:ycm_complete_in_strings = 1
+" change to debug to see more debug info
+let g:ycm_log_level = 'info'
+" key binding for YcmCompleter. Use tag importer to leverage
+" tag stack
+nnoremap <C-j> :TagImposterAnticipateJump <Bar> YcmCompleter GoToDeclaration<CR>
+nnoremap <C-k> :TagImposterAnticipateJump <Bar> YcmCompleter GoToDefinition<CR>
+" FIXME: this command has errors, but it is still usable.
+nnoremap <C-l> :TagImposterAnticipateJump <Bar> YcmCompleter GoToInclude<CR>
 
 " for quickly search file
 Plugin 'eparreno/vim-l9'
@@ -199,6 +206,10 @@ let g:SrcExpl_isUpdateTags = 0
 let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ."
 
 Plugin 'vim-scripts/AnsiEsc.vim'
+
+" For insert YcmCompleter goto into tagstack, then I can use <C+t> to jump
+" back to origin place
+Plugin 'idbrii/vim-tagimposter'
 call vundle#end()
 
 if filereadable(expand("~/.vimrc.local"))
