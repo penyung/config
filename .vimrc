@@ -147,9 +147,10 @@ let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_fileType = ['python']
 
-" for syntax check (python only)
+" for syntax check (python, shell script only)
 Plugin 'vim-syntastic/syntastic'
 let g:syntastic_python_checkers = ['pycodestyle']
+let g:syntastic_sh_checkers = ['shellcheck', 'sh']
 let g:syntastic_ignore_files = ['.ycm_extra_conf.py']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
@@ -157,7 +158,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_mode_map = {
   \ "mode": "passive",
-  \ "active_filetypes": ["python"] }
+  \ "active_filetypes": ["python", "sh"] }
 
 "for source explorer
 Plugin 'wesleyche/SrcExpl'
