@@ -119,7 +119,8 @@ nnoremap <C-l> :TagImposterAnticipateJump <Bar> YcmCompleter GoToInclude<CR>
 Plugin 'eparreno/vim-l9'
 Plugin 'seudut/FuzzyFinder'
 
-" for grep integration with vim
+" for grep integration with vim. Use :grep <pattern> <file> to do grep and
+" :copen to jump to lines for pattern and file
 Plugin 'yegappan/grep'
 
 " for markdown file
