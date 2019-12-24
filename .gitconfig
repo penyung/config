@@ -5,10 +5,11 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
+	pager = less -R
 [color]
 	ui = true
 [log]
 	decorate = short
 [alias]
 	commit = commit -s
-	lg = log --graph --pretty=format:'%Cred%h%Creset - %<(20,trunc)%an %Cgreen(%cr)%Creset %C(yellow)%d%Creset %<(140,trunc)%s' --abbrev-commit --date=relative --all
+	lg = log --graph --pretty=format:'%Cred%h%Creset - %<(20,trunc)%an %Cgreen(%cr)%Creset %C(yellow)%d%Creset %<(50,trunc)%s' --abbrev-commit --date=relative --all
