@@ -147,7 +147,7 @@ let g:indentLine_fileType = ['python']
 
 " for syntax check (python, shell script only)
 Plugin 'vim-syntastic/syntastic'
-let g:syntastic_python_checkers = ['pycodestyle']
+let g:syntastic_python_checkers = ['pycodestyle', 'pylint']
 let g:syntastic_sh_checkers = ['shellcheck', 'sh']
 let g:syntastic_ignore_files = ['.ycm_extra_conf.py']
 let g:syntastic_always_populate_loc_list = 1
