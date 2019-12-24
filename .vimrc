@@ -208,6 +208,10 @@ Plugin 'vim-scripts/AnsiEsc.vim'
 " back to origin place
 Plugin 'idbrii/vim-tagimposter'
 
+" For easily modify surroundings pairs, such as "Hello world!" --> 'Hello world!'
+" Use cs"'
+Plugin 'tpope/vim-surround'
+
 " For file system explorer. Use :NERDTree
 Plugin 'scrooloose/nerdtree'
 
