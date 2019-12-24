@@ -207,6 +207,10 @@ Plugin 'vim-scripts/AnsiEsc.vim'
 " For insert YcmCompleter goto into tagstack, then I can use <C+t> to jump
 " back to origin place
 Plugin 'idbrii/vim-tagimposter'
+
+" For file system explorer. Use :NERDTree
+Plugin 'scrooloose/nerdtree'
+
 " For better status/tabline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
