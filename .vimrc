@@ -123,10 +123,10 @@ Plugin 'seudut/FuzzyFinder'
 Plugin 'yegappan/grep'
 
 " for markdown file
-"Plugin 'vim-pandoc/vim-pandoc-syntax'
-"augroup pandoc_syntax
-"  au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
-"augroup END
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+augroup pandoc_syntax
+  au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+augroup END
 
 " for highlight several words in different colors
 Plugin 'inkarkat/vim-ingo-library'
