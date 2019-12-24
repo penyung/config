@@ -10,8 +10,8 @@ colorscheme 256-jungle
 set expandtab
 set tabstop=2
 set shiftwidth=2 " for tab view
-set laststatus=2
-set statusline=[%n]\ %<%F\ %((%1*%M%*%R%Y)%)\ %=%-19(\LINE\ [%3l/%3L]\ COL\ [%02c%03V]%)\ [%{&ff},%{&fileencoding},%Y]\ %P\ ascii[%02b]
+"set laststatus=0
+"set statusline=[%n]\ %<%F\ %((%1*%M%*%R%Y)%)\ %=%-19(\LINE\ [%3l/%3L]\ COL\ [%02c%03V]%)\ [%{&ff},%{&fileencoding},%Y]\ %P\ ascii[%02b]
 set mouse=a
 set novisualbell  " don't blink
 
@@ -207,6 +207,15 @@ Plugin 'vim-scripts/AnsiEsc.vim'
 " For insert YcmCompleter goto into tagstack, then I can use <C+t> to jump
 " back to origin place
 Plugin 'idbrii/vim-tagimposter'
+" For better status/tabline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline_theme='wombat'
+let g:airline_powerline_fonts = 1
+
+" For git command in vim, such as :Gblame for git blame current file in vim
+Plugin 'tpope/vim-fugitive'
+
 call vundle#end()
 
 if filereadable(expand("~/.vimrc.local"))
