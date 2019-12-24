@@ -31,6 +31,7 @@ augroup filetype
   au BufRead,BufNewFile *.cl     set filetype=cpp
   au BufRead,BufNewFile *.ptx    set filetype=s
   au BufRead,BufNewFile *.log    set filetype=log
+  au BufRead,BufNewFile *.fbs    set filetype=fbs
 augroup END
 
 " makefile need tab
