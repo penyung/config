@@ -127,8 +127,8 @@ Plugin 'yegappan/grep'
 "  au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
 "augroup END
 
-" for Highlight server words in different colors
-Plugin 'vim-scripts/ingo-library'
+" for highlight several words in different colors
+Plugin 'inkarkat/vim-ingo-library'
 Plugin 'inkarkat/vim-mark'
 
 " for load local vimrc
