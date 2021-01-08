@@ -1,6 +1,10 @@
 function cd2 () {
-  dirname=`dirname $1`
-  cd $dirname
+  if [ -d "$1" ]; then
+    cd $1
+  else
+    dirname=`dirname $1`
+    cd $dirname
+  fi
 }
 
 function ls2 () {
