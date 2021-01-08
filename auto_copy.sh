@@ -7,6 +7,7 @@ install)
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   ln -s `pwd`/.bash_aliases ~/.bash_aliases
   ln -s `pwd`/.gitconfig ~/.gitconfig
+  ln -s `pwd`/.gitignore ~/.gitignore
   ln -s `pwd`/.tmux.conf ~/.tmux.conf
   ln -s `pwd`/.vimrc ~/.vimrc
   mkdir -p ~/.vim/colors/

@@ -4,7 +4,7 @@
 	name = Pen-Yung Yu
 [core]
 	editor = vim
-	excludesfile = ~/.gitignore
+	excludesFile = ~/.gitignore
 	pager = less -R
 [color]
 	ui = true
