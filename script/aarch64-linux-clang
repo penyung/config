@@ -1,3 +1,0 @@
-#!/bin/bash
-
-~/llvm/build-0309-gold/bin/clang $@ -target aarch64 --sysroot ~/local/linaro/aarch64/sysroot-glibc-linaro-2.23-2017.02-aarch64-linux-gnu/
