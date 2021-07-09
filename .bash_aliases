@@ -9,3 +9,7 @@ export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\u@\h\[\033[00m\]:\
 export PATH="$HOME/local/script/:$HOME/local/bin/:$PATH"
 export LD_LIBRARY_PATH="$HOME/local/lib:$LD_LIBRARY_PATH"
 shopt -s checkwinsize
+
+if [ -f "config/ondir/scripts.sh" ]; then
+  source config/ondir/scripts.sh
+fi

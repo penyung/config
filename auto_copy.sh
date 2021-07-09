@@ -1,6 +1,16 @@
 #!/bin/bash
 
+function installOnDir() {
+  git clone https://github.com/alecthomas/ondir.git ondir
+  if [ -f $(pwd)/.ondirrc ]; then
+    ln -sf $(pwd)/.ondirrc ~/.ondirrc
+  fi
 
+  cd ondir
+  make
+  cp ondir ~/local/bin
+  cd ../
+}
 case $1 in
 install)
   git clone https://github.com/VundleVim/Vundle.vim $HOME/.vim/bundle/Vundle.vim
@@ -16,6 +26,10 @@ install)
   cp -r .vim/localvimrc/ ~/.vim/localvimrc/
   mkdir -p ~/local/
   cp -r script/ ~/local/
+  mkdir -p ~/local/bin
+  ## install ondir
+  installOnDir
+
   ;;
 back)
   cp ~/.vim/localvimrc/* .vim/localvimrc/

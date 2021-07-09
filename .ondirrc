@@ -1,0 +1,4 @@
+enter ~/ssd/repo-llvm
+  export ROOT=~/ssd/repo-llvm
+leave ~/ssd/repo-llvm
+  export ROOT=~/
